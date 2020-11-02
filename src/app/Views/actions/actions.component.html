@@ -1,0 +1,18 @@
+<div class="actions-wrapper">
+
+  <div class="input-div">
+    <div class="dollar-icon">$</div>
+    <input type="number" class="money-input" #thisAmount placeholder="enter amount" >
+  </div>
+
+  <div class="buttons-div">
+    <div class="deposit trans-button"
+         (click)="transactionStore.deposit(+thisAmount.value)">
+      Deposit
+    </div>
+    <div class="withdraw trans-button"
+         (click)="transactionStore.withdraw(+thisAmount.value)">
+      Withdraw
+    </div>
+  </div>
+</div>
