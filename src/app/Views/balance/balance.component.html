@@ -2,11 +2,11 @@
      *mobxAutorun
 >
   <div class="balance-title">
-    your account balance is : ${{transactionStore.balance}}
+    your budget balance is : ${{transactionStore.balance}}
   </div>
   <ng-container *ngIf="transactionStore.isNegative">
     <div class="overdraft">
-      YOUR ACCOUNT IS OVERDRAFT
+      YOUR BUDGET IS OVERDRAFT
     </div>
   </ng-container>
 </div>

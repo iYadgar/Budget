@@ -1,1 +1,22 @@
-<p>trans-navbar works!</p>
+<ol class="trans-navbar-wrapper">
+  <li class="radio-button-wrapper">
+    <input class="radio-input" type='radio' value='income' name='radio' id='radio1'
+           [(ngModel)]="transactionStore.selectedOption"
+    />
+    <label class="radio-label" for='radio1'>income</label>
+  </li>
+  <li radio-button-wrapper>
+    <input radio-input type='radio' value='outcome' name='radio' id='radio2'
+           [(ngModel)]="transactionStore.selectedOption"
+    />
+    <label class="radio-label" for='radio2'>outcome</label>
+  </li>
+  <li radio-button-wrapper>
+    <input radio-input type='radio' value='overall' name='radio' id='radio3'
+           [(ngModel)]="transactionStore.selectedOption"
+    />
+    <label class="radio-label" for='radio3'>overall</label>
+  </li>
+</ol>
+
+

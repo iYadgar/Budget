@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TransactionStore} from '../../stores/transaction-store';
 
 @Component({
   selector: 'app-trans-navbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public transactionStore : TransactionStore
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onChange(){
+    console.log(`value is : ${this.transactionStore.selectedOption}`);
   }
 
 }

@@ -1,0 +1,258 @@
+body, html, .app-wrapper {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  background-image: linear-gradient(to right, #EBEEF2, #97caad);
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+app-actions {
+  display: flex;
+  height: 200px;
+  width: 400px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.actions-wrapper {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  background: #fff;
+  height: 230px;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  align-items: center;
+  height: 40px;
+  justify-content: space-evenly;
+
+  border-radius: 37px;
+  font-size: 1.5em;
+  background: #EBEEF2;
+}
+
+.money-input {height: 25px;background: #EBEEF2;border: none;font-family: 'Montserrat';}
+
+.buttons-div {
+  display: flex;
+  flex: 1;
+  height: 90px;
+  align-items: center;
+  width: 400px;
+  justify-content: space-evenly;
+}
+
+
+.money-input:focus {
+  outline: none;
+}
+
+.trans-button {
+
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px lightgray;
+  cursor: pointer;
+  width: 70px;
+  display: flex;
+  text-align: center;
+}
+
+.trans-button:active {
+  background: #eee;
+}
+
+
+.balance-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  background: #fff;
+  height: 329px;
+  width: 560px;
+  font-size: 2em;
+  margin-top: 100px;
+}
+
+.transactions-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  background: #fff;
+  width: 400px;
+  justify-content: end;
+  overflow: scroll;
+  margin: 30px;
+  width: 90%;
+}
+
+app-transactions {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.transaction-title {
+  font-size: 2.8em;
+  margin: 30px;
+}
+
+
+.overdraft, .minus-money {
+  color: red;
+}
+
+
+.transactions {
+  font-size: 1.3em;
+  width: 350px;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-items: revert;
+  border: 0.5px solid #EBEEF2;
+}
+
+.transaction-object {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.date {
+  color: #adadad;
+}
+
+.delete-btn {
+
+  color: #da3333;
+  cursor: pointer;
+}
+
+.delete-btn:active {
+  color: #903434;
+}
+
+
+.actions-balance-view {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dollar-icon {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border-right: 1px solid #ffffff;
+  width: 16px;
+  color: #65BF95;
+}
+
+
+.main-title {
+  font-size: 4em;
+  font-weight: 100;
+}
+
+
+app-trans-navbar {
+  display: flex;
+  flex: 1;
+  width: 100%;
+
+}
+
+.trans-navbar-wrapper {
+  display: flex;
+
+  flex: 1;
+  justify-content: space-evenly;
+  height: 80px;
+  border: 1px solid #EBEEF2;
+  border-radius: 10px;
+  align-items: center;
+}
+
+
+.trans-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  padding-top: 5px;
+
+}
+
+app-transactions-list {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #EBEEF2;
+  border-radius: 10px;
+}
+.plus-money{
+  color: #65BF95;
+}
+
+
+.action-view-wrapper {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+
+div {}
+
+app-chart {
+    display: flex;
+    flex: 1;
+    height: 350px;
+    width: 100%;
+}
+
+.chart-wrapper {
+    display: flex;
+    flex: 1;
+    /* height: 100%; */
+    width: 100%;
+    border: 1px solid;
+}

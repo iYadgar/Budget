@@ -2,17 +2,18 @@
 
   <div class="input-div">
     <div class="dollar-icon">$</div>
-    <input type="number" class="money-input" #thisAmount placeholder="enter amount" >
+    <input type="number" class="money-input" #thisAmount placeholder="enter amount"
+    (keydown.enter)="transactionStore.deposit(+thisAmount.value)">
   </div>
 
   <div class="buttons-div">
     <div class="deposit trans-button"
          (click)="transactionStore.deposit(+thisAmount.value)">
-      Deposit
+      deposit
     </div>
     <div class="withdraw trans-button"
          (click)="transactionStore.withdraw(+thisAmount.value)">
-      Withdraw
+      withdraw
     </div>
   </div>
 </div>
