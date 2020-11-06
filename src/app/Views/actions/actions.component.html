@@ -1,9 +1,11 @@
-<div class="actions-wrapper">
+<div class="actions-wrapper"
+     *mobxAutorun
+>
 
   <div class="input-div">
     <div class="dollar-icon">$</div>
     <input type="number" class="money-input" #thisAmount placeholder="enter amount"
-    (keydown.enter)="transactionStore.deposit(+thisAmount.value)">
+           (keydown.enter)="transactionStore.deposit(+thisAmount.value)">
   </div>
 
   <div class="buttons-div">

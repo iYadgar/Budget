@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {RootStore} from './root-store';
 import {action, computed, observable} from 'mobx-angular';
+import {Chart} from 'chart.js';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChartStore {
-  @observable liveIncome: number = this.income;
-  @observable liveOutcome: number = this.outcome;
+
 
   constructor(
     public root: RootStore
@@ -41,10 +41,6 @@ export class ChartStore {
       });
 
     return outcomeArr.reduce((acc, cur) => acc + cur, 0);
-  }
-
-  @action updateChart(chart) {
-    chart.update();
   }
 
 

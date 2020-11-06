@@ -1,0 +1,18 @@
+<div class="chart-wrapper">
+
+  <div class="pie-wrapper" *mobxAutorun>
+    <canvas #myCanvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            [colors]="doughnutChartColors"
+            [options]="doughnutChartOptions">
+    </canvas>
+
+  </div>
+
+  <button (click)="pushMinus()">-</button>
+  <button (click)="pushPlus()">+</button>
+</div>
+
+
