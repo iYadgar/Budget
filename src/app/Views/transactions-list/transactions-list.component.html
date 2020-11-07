@@ -1,0 +1,39 @@
+<div class="trans-list-wrapper" *mobxAutorun>
+
+  <div class="transactions"
+       *ngFor="let transaction of transactionStore.outcomeOrIncome">
+
+    <div *ngIf="transaction.amount > 0" class="transaction-object">
+      <div class="plus-money">
+        ${{transaction.amount}}
+      </div>
+      <div class="date">
+        {{transaction.date}}
+      </div>
+      <div class="delete-btn"
+           (click)="delete(transaction)">
+        <mat-icon>
+          delete
+        </mat-icon>
+      </div>
+    </div>
+
+
+    <div *ngIf="transaction.amount < 0" class="transaction-object">
+      <div class="minus-money">
+        ${{transaction.amount}}
+      </div>
+      <div class="date">
+        {{transaction.date}}
+      </div>
+      <div class="delete-btn"
+           (click)="delete(transaction)">
+        <mat-icon>
+          delete
+        </mat-icon>
+      </div>
+    </div>
+
+
+  </div>
+</div>
