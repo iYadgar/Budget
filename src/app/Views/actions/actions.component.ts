@@ -20,5 +20,14 @@ export class ActionsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deposit(amount: number) {
+    this.transactionStore.deposit(amount);
+    this.cs.updateIncome(amount);
+  }
+
+  withdraw(amount: number) {
+    this.transactionStore.withdraw(amount);
+    this.cs.updateOutcome(amount);
+  }
 
 }

@@ -5,7 +5,7 @@ import * as dayjs from 'dayjs';
 import {v4 as uuidv4} from 'uuid';
 import {autorun} from 'mobx';
 import {RootStore} from './root-store';
-
+import {ChartStore} from './chart-store';
 
 
 @Injectable({
@@ -16,7 +16,8 @@ export class TransactionStore {
   @observable selectedOption: string = 'overall';
 
   constructor(
-    public root : RootStore
+    public root: RootStore,
+
   ) {
     this.root.ts = this;
 
@@ -56,7 +57,7 @@ export class TransactionStore {
           date: dayjs().format('DD/MM/YYYY'),
           id: uuidv4(),
           type: 'income'
-        })
+        });
 
 
     }
@@ -86,6 +87,7 @@ export class TransactionStore {
     let index = this.transactions.indexOf(transactionFind);
 
     return this.transactions.splice(index, 1);
+
 
   }
 

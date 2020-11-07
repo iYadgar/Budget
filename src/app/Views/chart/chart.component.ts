@@ -1,9 +1,7 @@
 import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Chart, ChartOptions, ChartType} from 'chart.js';
-import {RootStore} from '../../stores/root-store';
+
 import {ChartStore} from '../../stores/chart-store';
-import {Color, Label, MultiDataSet, SingleDataSet} from 'ng2-charts';
-import {observable} from 'mobx-angular';
 
 
 @Component({
@@ -14,39 +12,46 @@ import {observable} from 'mobx-angular';
 })
 export class ChartComponent implements OnInit {
   @ViewChild('myCanvas', {static: true})
-  canvas: HTMLCanvasElement;
+  canvas: ElementRef<HTMLCanvasElement>;
+  private ctx: CanvasRenderingContext2D;
 
-  try1: number = 100;
-  try2: number = -100;
-  public doughnutChartLabels: Label[] = ['income', 'outcome'];
-  public doughnutChartData: SingleDataSet = [this.cs.income, this.cs.outcome];
-  public doughnutChartType: ChartType = 'doughnut';
-  public doughnutChartColors = [
-    {
-      backgroundColor: ['#65BF95', '#cf4e57'],
-    },
-  ];
-  public doughnutChartOptions: ChartOptions = {
-    responsive: true
-  };
+
+
+
 
   constructor(public cs: ChartStore) {
     window['ChartComponent'] = this;
   }
 
   ngOnInit(): void {
-    console.log('myCanvas');
+    this.ctx = this.canvas.nativeElement.getContext('2d');
+    this.draw()
+
+
 
   }
 
+  draw() {
+    this.cs.chart = new Chart(this.ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          data: this.cs.data,
+          backgroundColor: ['#65BF95','#cf4e57']
+        }],
 
-  pushPlus() {
-    this.doughnutChartData[0] = +this.doughnutChartData[0] + 50;
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
+          'income',
+          'outcome'
+
+        ],
+      }
+    });
   }
 
-  pushMinus() {
-    this.doughnutChartData[1] = +this.doughnutChartData[1] - 50;
-  }
+
+
 
 
 }
