@@ -50,7 +50,12 @@ app-actions {
   background: #EBEEF2;
 }
 
-.money-input {height: 25px;background: #EBEEF2;border: none;font-family: 'Montserrat';}
+.money-input {
+  height: 25px;
+  background: #EBEEF2;
+  border: none;
+  font-family: 'Montserrat';
+}
 
 .buttons-div {
   display: flex;
@@ -104,7 +109,8 @@ app-actions {
   flex: 1;
   flex-direction: column;
   justify-content: space-evenly;
-
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 10px;
   padding: 20px;
   align-items: center;
@@ -112,7 +118,6 @@ app-actions {
   width: 400px;
   justify-content: end;
   overflow: scroll;
-  margin: 30px;
   width: 90%;
 }
 
@@ -121,6 +126,7 @@ app-transactions {
   flex: 1;
   flex-direction: column;
   overflow: auto;
+
 }
 
 .transaction-title {
@@ -193,19 +199,16 @@ app-transactions {
 app-trans-navbar {
   display: flex;
   flex: 1;
-  width: 100%;
-
+  width: 400px;
 }
 
 .trans-navbar-wrapper {
   display: flex;
-
-  flex: 1;
-  justify-content: space-evenly;
   height: 80px;
   border: 1px solid #EBEEF2;
   border-radius: 10px;
   align-items: center;
+  width: 400px;
 }
 
 
@@ -228,63 +231,82 @@ app-transactions-list {
   border: 1px solid #EBEEF2;
   border-radius: 10px;
 }
-.plus-money{
+
+.plus-money {
   color: #65BF95;
 }
 
 
 .action-view-wrapper {
-    display: flex;
-    flex: 1;
-    align-items: center;
+  display: flex;
+  flex: 1;
+  align-items: center;
 }
-
-
 
 
 app-chart {
-    display: flex;
-    flex: 1;
-    height: 350px;
-    width: 100%;
+  display: flex;
+  flex: 1;
+  height: 350px;
+  width: 100%;
 }
 
 .chart-wrapper {
-    display: flex;
-    flex: 1;
-    width: 100%;
-    border: 1px solid #EBEEF2;
-    margin-top: 15px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: ;
-    padding: 50px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  border: 1px solid #EBEEF2;
+  margin-top: 15px;
+  border-radius: 10px;
+  justify-content: center;
+
+  padding: 50px;
 }
 
 
 .percentages {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .income-perc {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .percentage-title {
-    display: flex;
-    width: 100%;
-    /* height: 100%; */
-    font-size: 3em;
+  display: flex;
+  width: 100%;
+
+  font-size: 3em;
 }
 
 .percentage-amount {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    font-size: 4em;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 4em;
+}
+
+
+.radio-label {
+  border: 1px solid #EBEEF2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.radio-button-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100px;
+  align-items: center;
 }
