@@ -1,12 +1,14 @@
 <div class="balance-wrapper"
      *mobxAutorun
 >
-  <div class="balance-title">
-    your budget balance is : ${{transactionStore.balance}}
-  </div>
-  <ng-container *ngIf="transactionStore.isNegative">
-    <div class="overdraft">
-      YOUR BUDGET IS OVERDRAFT
+  <div class="balance-border">
+    <div class="balance-title">
+      your budget balance is : ${{transactionStore.balance}}
     </div>
-  </ng-container>
+    <ng-container *ngIf="transactionStore.isNegative">
+      <div class="overdraft">
+        YOUR BUDGET IS OVERDRAFT
+      </div>
+    </ng-container>
+  </div>
 </div>

@@ -3,13 +3,14 @@ import {RootStore} from './root-store';
 import {action, computed, observable} from 'mobx-angular';
 import {Chart} from 'chart.js';
 import {Itransaction} from '../types/models/Itransaction';
+import {autorun, intercept, reaction} from 'mobx';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChartStore {
-  @observable chart: Chart;
+  chart: Chart;
   @observable data = [this.income, this.outcome];
 
 
@@ -17,6 +18,17 @@ export class ChartStore {
     public root: RootStore
   ) {
     this.root.cs = this;
+
+    autorun(() => {
+      console.log(`data has changed to ${this.data}`);
+      if (this.chart) {
+        this.chart.update();
+      }
+      if(!this.root.ts.transactions){
+        this.chart.update();
+        this.chart.destroy();
+      }
+    });
   }
 
   @computed get income() {
@@ -48,19 +60,19 @@ export class ChartStore {
 
   @computed get balancePercentage() {
 
-    return !this.root.ts.balance ? 0 : Math.floor((this.root.ts.balance / this.income) * 100);
+    return !this.root.ts.balance || this.income === 0 ? 0 : Math.floor((this.root.ts.balance / this.income) * 100);
   }
 
 
   @action updateIncome(amount) {
     this.data[0] = this.data[0] + amount;
-    this.chart.update();
+    /*this.chart.update();*/
 
   }
 
   @action updateOutcome(amount) {
     this.data[1] = this.data[1] + amount;
-    this.chart.update();
+    /*this.chart.update();*/
 
   }
 
@@ -74,7 +86,6 @@ export class ChartStore {
 
     }
 
-    this.root.cs.chart.update();
 
   }
 

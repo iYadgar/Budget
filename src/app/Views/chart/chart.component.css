@@ -1,7 +1,5 @@
 .pie-wrapper{
   display: block;
-  height: 400px;
-  width: 400px;
 }
 ul {
   list-style: none;
@@ -9,11 +7,7 @@ ul {
   flex: 1;
 }
 li {
-  display: flex;
-  margin-right: 15px;
-  flex: 1;
-  height: 100%;
-  align-items: center;
+
 }
 input {
   visibility:hidden;
@@ -24,7 +18,6 @@ label {
   border-left: 1px solid #EBEEF2 ;
   display: flex;
   width: 200px;
-  height: 100%;
   align-items: center;
   font-size: 1.4em;
 

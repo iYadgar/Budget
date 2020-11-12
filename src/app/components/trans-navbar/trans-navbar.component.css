@@ -11,5 +11,5 @@ label {
 
 }
 input:checked + label {
-  background : #cf4e57;
+  background : #EBEEF2;
 }

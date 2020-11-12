@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Chart, ChartOptions, ChartType} from 'chart.js';
+import {Chart} from 'chart.js';
 
 import {ChartStore} from '../../stores/chart-store';
 
@@ -15,21 +15,16 @@ export class ChartComponent implements OnInit {
   canvas: ElementRef<HTMLCanvasElement>;
   private ctx: CanvasRenderingContext2D;
 
-
-
-
-
   constructor(public cs: ChartStore) {
     window['ChartComponent'] = this;
   }
 
+
   ngOnInit(): void {
     this.ctx = this.canvas.nativeElement.getContext('2d');
-    this.draw()
-
-
-
+    this.draw();
   }
+
 
   draw() {
     this.cs.chart = new Chart(this.ctx, {
@@ -37,21 +32,27 @@ export class ChartComponent implements OnInit {
       data: {
         datasets: [{
           data: this.cs.data,
-          backgroundColor: ['#65BF95','#cf4e57']
+          backgroundColor: ['#65BF95', '#cf4e57']
+
+
         }],
 
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
-          'income',
-          'outcome'
+          `income `,
+          `outcome`
 
         ],
+
+
+      },
+      options: {
+        legend: {
+          display: false,
+        }
       }
     });
   }
-
-
-
 
 
 }

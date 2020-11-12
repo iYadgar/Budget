@@ -5,7 +5,6 @@ import * as dayjs from 'dayjs';
 import {v4 as uuidv4} from 'uuid';
 import {autorun} from 'mobx';
 import {RootStore} from './root-store';
-import {ChartStore} from './chart-store';
 
 
 @Injectable({
@@ -17,7 +16,6 @@ export class TransactionStore {
 
   constructor(
     public root: RootStore,
-
   ) {
     this.root.ts = this;
 
@@ -26,6 +24,7 @@ export class TransactionStore {
     }
     autorun(() => {
       localStorage.savedTransactions = JSON.stringify(this.transactions);
+
     });
   }
 
@@ -47,8 +46,8 @@ export class TransactionStore {
   }
 
   @action deposit(money: number) {
-    if (!money) {
-      return alert('Please insert amount');
+    if (!money || money < 0) {
+      return alert('Please insert positive amount');
 
     } else {
       return this.transactions
@@ -66,7 +65,7 @@ export class TransactionStore {
   }
 
   @action withdraw(money: number) {
-    if (!money) {
+    if (!money ) {
       return alert('Please insert amount');
 
     } else {
